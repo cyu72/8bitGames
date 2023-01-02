@@ -6,5 +6,37 @@
 }
 
 #dino {
-    
+    width: 50px;
+    height: 50px;
+    background-image: url("./src/trex.png");
+    background-size: 50px 50px;
+
+    position: relative;
+    top: 150px;
+}
+
+.jump {
+    animation: jump 0.3s linear;
+}
+
+@keyframes jump {
+    0% {
+        top: 150px;
+    }
+
+    30% {
+        top: 125px;
+    }
+
+    50% {
+        top: 80px;
+    }
+
+    80% {
+        top: 125px;
+    }
+
+    100%{
+        top: 150px;
+    }
 }
