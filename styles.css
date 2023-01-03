@@ -24,10 +24,18 @@
     position: relative;
     top: 110px; 
     left: 580px;
+
+    animation: cactusBlock 1s infinite linear;
 }
 
 @keyframes cactusBlock {
-    
+    0% {
+        left: 580px;
+    }
+
+    100% {
+        left: 20px;
+    }
 }
 
 .jump {
