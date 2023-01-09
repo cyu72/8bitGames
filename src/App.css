@@ -2,11 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -42,6 +37,7 @@
   height: 200px;
   border: 1px solid black;
   margin: auto;
+  overflow: hidden;
 }
 
 #dino {
@@ -105,4 +101,9 @@
   100%{
       top: 150px;
   }
+}
+
+#floor {
+  position: relative;
+  width: 2500px;
 }
