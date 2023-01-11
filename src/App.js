@@ -1,7 +1,10 @@
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
 import Home from './components/home'
-import DinoGame from "./components/dinosaurGame/dinoGame";
+import DinoGamePage from "./components/dinosaurGame/dinoGamePage.jsx";
+import SpaceInvadersGame from "./components/spaceInvaders/spaceInvadersGame";
+import BrickBreakerGame from "./components/brickBreaker/brickBreakerGame";
 
 function App() {
   return (
@@ -9,7 +12,9 @@ function App() {
       <Router>
         <Routes>
           <Route exact path="/" element={<Home/>}/>{/* USE ELEMENT ATTRIBUTE TO REFER TO COMPONENTS*/}
-          <Route path="/dinoGame" element={<DinoGame/>}/>
+          <Route path="/dinoGame" element={<DinoGamePage/>}/>
+          <Route path="/spaceInvaders" element={<SpaceInvadersGame/>}/>
+          <Route pat="/brickBreaker" element={<BrickBreakerGame/>}/>
         </Routes>      
       </Router>
       </div>

@@ -12,6 +12,12 @@ const Home = () => {
                 <li>
                     <Link to="/dinoGame">Dinosaur Game</Link>
                 </li>
+                <li>
+                    <Link to="/spaceInvaders">Space Invaders</Link>
+                </li>
+                <li>
+                    <Link to="/brickBreaker">Brick Breaker</Link>
+                </li>
             </ul>
         </div>
     );

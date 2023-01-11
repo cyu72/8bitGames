@@ -32,12 +32,34 @@
   }
 }
 
-.game {
+.dinoGame {
   width: 600px;
   height: 200px;
   border: 1px solid black;
   margin: auto;
   overflow: hidden;
+}
+
+#score {
+  font-family: 'VT323', monospace;
+  position: absolute;
+  width: 10030023029320390px;
+  height: 200px;
+  margin: 10px;
+}
+
+#startScreen {
+  font-family: 'VT323', monospace;
+  position: absolute;
+  width: 10390px;
+  height: 200px;
+  margin: 10px;
+  left: 530px;
+  top: 60px;
+}
+
+#doNotDisplayStart {
+  display: none;
 }
 
 #dino {
@@ -61,6 +83,21 @@
   left: 580px;
 
   animation: cactusBlock 1.3s infinite linear;
+  animation-play-state: paused;
+}
+
+#cactus.animation{
+  width: 20px;
+  height: 40px;
+  background-image: url("imgs/cactus.png");
+  background-size: 20px 40px;
+
+  position: relative;
+  top: 110px; 
+  left: 580px;
+
+  animation: cactusBlock 1.3s infinite linear;
+  animation-play-state: running;
 }
 
 @keyframes cactusBlock {
@@ -107,3 +144,25 @@
   position: relative;
   width: 2500px;
 }
+
+.spaceGame{
+  width: 900px;
+  height: 600px;
+  border: 6px solid rgb(31, 81, 255);
+  margin: auto;
+  overflow: hidden;
+}
+
+#spaceInvader {
+  width: 50px;
+  height: 50px;
+  background-image: url("/src/imgs/spaceInvader.png");
+  background-size: 50px 50px;
+
+  position: relative;
+  top: 150px; 
+}
+
+/* body{
+  background-color: rgb(105,105,105);
+} */
