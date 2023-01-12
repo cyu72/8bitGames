@@ -8,7 +8,8 @@ import BrickBreakerGame from "./components/brickBreaker/brickBreakerGame";
 
 function App() {
   return (
-    <div>
+    <div className='home'>
+      {/* <canvas></canvas> */}
       <Router>
         <Routes>
           <Route exact path="/" element={<Home/>}/>{/* USE ELEMENT ATTRIBUTE TO REFER TO COMPONENTS*/}

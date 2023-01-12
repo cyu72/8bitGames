@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../../App.css';
 import floor from '../../imgs/ground.png';
-import { ShakeHard } from 'reshake'
+import { Shake } from 'reshake'
 import anime from 'animejs/lib/anime.es.js';
 
 function DinoGame() {
@@ -12,11 +12,13 @@ function DinoGame() {
     let [score, setScore] = useState(0);
     let [animation, setAnimation] = useState("");
     let [isJump, setIsJump] = useState("");
-    let [isLand, setIsLand] = useState(false);
+    let [isLand, setIsLand] = useState("false");
     const isLifeRef = useRef(0);
     isLifeRef.current = isLife;
     const animationRef = useRef(0);
     animationRef.current = animation;
+    const isLandRef = useRef(0);
+    isLandRef.current = isLand;
 
     useEffect(() => {
         document.addEventListener('keydown', detectKeyDown, true);
@@ -24,7 +26,7 @@ function DinoGame() {
 
     const detectKeyDown = (e) => {
         if (e.keyCode === 32) {
-            if (isLife === 'isNotLife'){
+            if (isLifeRef.current === 'isNotLife'){
                 setAnimation("animation");
                 setIsLife("isLife");
             }
@@ -33,17 +35,17 @@ function DinoGame() {
     }
 
     let triggerJump = () => {
-        if (isJump === "" && isLand === false) {
-            console.log(cactus.current.className);
+        if (isJump === "") {
             setIsJump("jump");
-            setIsLand(true);
+            setIsLand("true");
+            console.log(isLandRef);
             setTimeout(() => {
-                if (isLife === "isLife"){
+                if (isLifeRef.current === "isLife"){
                     setScore((score) => score + 1);
                 }
                 setIsJump("");
             }, 350);
-            setIsLand(false);
+            setIsLand("false");
         }
     };
 
@@ -59,7 +61,7 @@ function DinoGame() {
             if (dinoBottom < -110) {
                 alert("Game Over!");
                 setScore(0);
-                setIsLand(false);
+                setIsLand("false");
                 setIsLife("isNotLife");
                 setAnimation("");
                 // reset position
@@ -70,14 +72,15 @@ function DinoGame() {
     return (
         <React.Fragment>
             <link rel="preconnect" href="https://fonts.googleapis.com"/><link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet"/>
-            <ShakeHard active={isLand} dur={300}>
+            <Shake active={isLandRef} dur={300}>
                 <div className="dinoGame">
+                    <h3 id={isLife === "isNotLife" ? "startScreen" : "doNotDisplayStart"}>Press space to start!</h3>
                     <h3 id="score">Score: {score}</h3>
                     <div className={isJump} id="dino" ref={dinosaur}/>
                     <div className={animation} id="cactus" ref={cactus}/>
                     <img src={floor} id="floor" alt='floor.png'/>
                 </div>
-            </ShakeHard>
+            </Shake>
         </React.Fragment>
     );
 }

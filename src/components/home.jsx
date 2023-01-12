@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Home = () => {
     return (
         <div>
-            Hello World
+            <canvas></canvas>
             <ul>
                 <li>
                     <Link to="/">Home</Link>

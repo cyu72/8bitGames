@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# 8bitGames
+
+A website containing 4 classic games with a retro and modern feel.
+
+<br>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

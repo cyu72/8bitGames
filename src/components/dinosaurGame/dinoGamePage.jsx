@@ -1,11 +1,14 @@
 import React from 'react';
 import DinoGame from './dinoGame.jsx';
+import '../../App.css'
 
 function DinoGamePage() {
     return ( 
-        <div>
-            <DinoGame/>
-        </div>
+        <body className='dinoGamePage'>
+            <div>
+                <DinoGame/>
+            </div>
+        </body>
      );
 }
 

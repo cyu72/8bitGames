@@ -163,6 +163,10 @@
   top: 150px; 
 }
 
+.dinoGamePage body{
+  background-color: #61dafb;
+}
+
 /* body{
   background-color: rgb(105,105,105);
 } */
