@@ -8,4 +8,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### `npm start`
 
-* Created with React, animated by anime.js and fonts from google.fonts
+* Created with React, animated by anime.js, utilized components from Material-UI and fonts from google.fonts
+* Within the src folder of this project will contain another readme of material that I have learned and challenges that I've come across from this project, which I have solved/found the answer to.
