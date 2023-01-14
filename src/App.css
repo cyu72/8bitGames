@@ -158,3 +158,24 @@
   position: relative;
   top: 150px; 
 }
+
+#home-title {
+  font-size: 170px;
+  text-align: center;
+  font-family: 'VT323', monospace;
+  animation: text-loop 4s infinite;
+}
+
+@keyframes text-loop {
+  0% { color: #fafa6e;}
+  10% {color: #c4ec74;}
+  20% {color: #92dc7e;}
+  30% {color: #64c987;}
+  40% {color: #39b48e;}
+  50% {color: #089f8f;}
+  60% {color: #00898a;}
+  70% { color: #08737f;}
+  80% {color: #215d6e;}
+  90% {color: #2a4858;}
+  100% {color: #fafa6e;}
+}

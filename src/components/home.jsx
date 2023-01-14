@@ -9,7 +9,12 @@ const Home = () => {
 
     return (  
         <div className="home-background">   
-        
+            <head>
+                <link rel="preconnect" href="https://fonts.googleapis.com"/>
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+                <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet"/>
+            </head>
+            <h1 id="home-title">8 bit games</h1>
         </div>
     );
 }
