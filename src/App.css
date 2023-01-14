@@ -45,13 +45,13 @@
 }
 
 #startScreen {
+  display: inline-block;
   font-family: 'VT323', monospace;
   position: absolute;
-  width: 10390px;
-  height: 200px;
-  margin: 10px;
-  left: 530px;
-  top: 60px;
+  text-align: center;
+  margin: 50px;
+  top: 10%;
+  left: 43%;
 }
 
 #doNotDisplayStart {
