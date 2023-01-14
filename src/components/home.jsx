@@ -1,24 +1,15 @@
-import React from 'react';
-import { Link } from "react-router-dom";
+import React, { useEffect, useRef } from 'react';
+import "../App.css"
 
 const Home = () => {
-    return (
-        <div>
-            <canvas></canvas>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-                <li>
-                    <Link to="/dinoGame">Dinosaur Game</Link>
-                </li>
-                <li>
-                    <Link to="/spaceInvaders">Space Invaders</Link>
-                </li>
-                <li>
-                    <Link to="/brickBreaker">Brick Breaker</Link>
-                </li>
-            </ul>
+
+    useEffect(() => {
+        document.body.style = 'background-color: #696969;';
+    },[])
+
+    return (  
+        <div className="home-background">   
+        
         </div>
     );
 }

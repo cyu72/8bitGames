@@ -21,6 +21,7 @@ function DinoGame() {
     isLandRef.current = isLand;
 
     useEffect(() => {
+        // document.body.style = 'background-color: #696969;';
         document.addEventListener('keydown', detectKeyDown, true);
     }, []);
 

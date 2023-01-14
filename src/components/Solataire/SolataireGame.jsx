@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, { useEffect, setState } from "react";
 import '../../App.css';
 
 function SolataireGame() {
