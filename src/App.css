@@ -159,6 +159,10 @@
   top: 150px; 
 }
 
+.home-background{
+  text-align: center;
+}
+
 #home-title {
   font-size: 170px;
   text-align: center;
@@ -178,4 +182,13 @@
   80% {color: #215d6e;}
   90% {color: #2a4858;}
   100% {color: #fafa6e;}
+}
+
+#home-desc {
+  font-family: 'DotGothic16', sans-serif;
+  font-size: 30px;
+}
+
+#dinoScreenshot {
+  top: 20px;
 }

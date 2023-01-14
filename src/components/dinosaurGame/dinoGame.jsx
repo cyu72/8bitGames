@@ -21,7 +21,7 @@ function DinoGame() {
     isLandRef.current = isLand;
 
     useEffect(() => {
-        document.body.style = 'background-image: linear-gradient(#FEB628, #FE2765, #9C0A70, #421576); background-repeat: no-repeat; background-size: 100vw 100vh;';
+        document.body.style = 'background-image: linear-gradient(#FEB628, #FE2765, #9C0A70, #421576); background-repeat: no-repeat; background-size: 100vw 100vh; overflow: hidden';
         document.addEventListener('keydown', detectKeyDown, true);
     }, []);
 
