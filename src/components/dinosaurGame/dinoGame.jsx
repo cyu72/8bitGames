@@ -25,6 +25,13 @@ function DinoGame() {
         document.addEventListener('keydown', detectKeyDown, true);
     }, []);
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            isAlive();
+        }, 100);
+        return () => clearInterval(interval);
+    }, []);
+
     const detectKeyDown = (e) => {
         if (e.keyCode === 32) {
             if (isLifeRef.current === 'isNotLife'){
@@ -50,7 +57,7 @@ function DinoGame() {
         }
     };
 
-    let isAlive = setInterval(function () {
+    let isAlive = () => {
         let dinoBottom = 0;
         let cactusXpos = 0;
         if (document.readyState === "complete" || document.readyState === "loaded") {
@@ -68,7 +75,7 @@ function DinoGame() {
                 // reset position
             }
         }
-    })
+    }
 
     return (
         <React.Fragment>
