@@ -3,13 +3,18 @@ import { useEffect, useState } from "react";
 import "../../App.css";
 import Alien from './alien';
 
-const bodyStyle = {
-    backgroundColor: "105,105,105"
-}
-
 function SpaceInvadersGame() {
 
+    const enemyMap = [
+        [1, 2, 1, 3, 1, 1],
+        [1, 3, 1, 1, 1, 1],
+        [1, 1, 2, 1, 3, 3]
+    ]
+
+    let [isAlive, setIsAlive] = useState("notAlive");
+
     useEffect(() => {
+        document.body.style = 'background-image: linear-gradient(#FEB628, #FE2765, #9C0A70, #421576); background-repeat: no-repeat; background-size: 100vw 100vh; overflow: hidden';
         document.addEventListener('keydown', detectKeyDown, true);
     });
     
@@ -17,20 +22,11 @@ function SpaceInvadersGame() {
         if (e.keyCode === 32) {
             if (isAlive === "notAlive"){
                 //start the game
-                for (let i = 0; i < alienCount; i++){
-                    setAliens([...aliens,
-                        1
-                    ]);
-                }
-                setIsAlive("isAlive");
-                console.log(aliens);
+                setIsAlive("Alive");
+
             }
         }
     }
-
-    let [alienCount, setAlienCount] = useState(10);
-    let [isAlive, setIsAlive] = useState("notAlive");
-    let [aliens, setAliens] = useState([]);
 
     return (
         <div className="spaceGame" playable={isAlive}>
@@ -38,7 +34,7 @@ function SpaceInvadersGame() {
             <Alien/>
         </div>
             // {/* <body style={bodyStyle} className="spaceBackground"/>  */}
-    ); // why is it so fucking hard to add a goddamn background
+    );
 }
 
 export default SpaceInvadersGame;
