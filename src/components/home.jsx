@@ -20,7 +20,7 @@ const Home = () => {
             </head>
             <h1 id="home-title">8-bit games</h1>
             <p id="home-desc">Bite sized games with chew sized fun.</p> {/* Want to move the two p elements closer to the h1 element */}
-            <p id="home-desc">(Yes I know very corny)</p>
+            <p id="home-desc">#Description2</p>
             <img id="dinoScreenshot" src={dinoScreenshot}/>
         </div>
     );

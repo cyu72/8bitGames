@@ -167,7 +167,7 @@
   font-size: 170px;
   text-align: center;
   font-family: 'VT323', monospace;
-  animation: text-loop 4s infinite;
+  animation: text-loop 8s infinite;
 }
 
 @keyframes text-loop {
