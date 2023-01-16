@@ -6,10 +6,19 @@ import Alien from './alien';
 function SpaceInvadersGame() {
 
     const enemyMap = [
-        [1, 2, 1, 3, 1, 1],
-        [1, 3, 1, 1, 1, 1],
-        [1, 1, 2, 1, 3, 3]
-    ]
+        {
+            row: 3, arr: [1, 2, 1, 3, 1, 1]
+        },
+        {
+            row: 2, arr: [1, 3, 1, 1, 1, 1]
+        },
+        {
+            row: 1, arr: [1, 1, 2, 1, 3, 3]
+        }
+        // [1, 2, 1, 3, 1, 1],
+        // [1, 3, 1, 1, 1, 1],
+        // [1, 1, 2, 1, 3, 3]
+    ];
 
     let [isAlive, setIsAlive] = useState("notAlive");
 
@@ -31,7 +40,11 @@ function SpaceInvadersGame() {
     return (
         <div className="spaceGame" playable={isAlive}>
             <div id="spaceShip"/>
-            <Alien/>
+            <div>
+                {enemyMap.map((item => item.arr.map((alienHealth) => (
+                    <Alien row={`/${item.row}`} alienHealth={`/${alienHealth}`}/>
+                ))))}
+            </div>
         </div>
             // {/* <body style={bodyStyle} className="spaceBackground"/>  */}
     );

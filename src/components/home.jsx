@@ -5,7 +5,7 @@ import dinoScreenshot from '../imgs/dinoScreenshot.png';
 const Home = () => {
 
     useEffect(() => {
-        document.body.style = 'background-image: linear-gradient(#FEB628, #FE2765, #9C0A70, #421576); background-repeat: no-repeat; background-size: 100vw 100vh;';
+        document.body.style = 'background-image: linear-gradient(#FEB628, #FE2765, #9C0A70, #421576); background-repeat: no-repeat; background-size: 100vw 100vh; background-attachment: fixed;';
     },[])
 
     return (  

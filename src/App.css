@@ -123,6 +123,19 @@
   overflow: hidden;
 }
 
+#spaceInvader\/1 {
+  width: 50px;
+  height: 50px;
+  background-image: url("imgs/spaceInvader.png");
+  background-size: 50px 50px;
+
+  position: absolute;
+  top: 150px;
+  margin: 5px;
+  justify-content: 'space-between';
+  left: 5px;
+}
+
 #spaceInvader {
   width: 50px;
   height: 50px;
@@ -130,7 +143,21 @@
   background-size: 50px 50px;
 
   position: relative;
-  top: 150px; 
+  top: 150px;
+  justify-content: 'space-between';
+  left: 5px;
+}
+
+#spaceInvader {
+  width: 50px;
+  height: 50px;
+  background-image: url("imgs/spaceInvader.png");
+  background-size: 50px 50px;
+
+  position: relative;
+  top: 150px;
+  justify-content: 'space-between';
+  left: 5px;
 }
 
 .home-background{
