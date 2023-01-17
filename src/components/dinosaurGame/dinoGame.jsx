@@ -28,7 +28,7 @@ function DinoGame() {
     useEffect(() => {
         const interval = setInterval(() => {
             isAlive();
-        }, 100);
+        }, 10);
         return () => clearInterval(interval);
     }, []);
 
