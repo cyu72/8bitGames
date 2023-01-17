@@ -82,15 +82,15 @@
 
 @keyframes jump {
   0% {
-      top: 150px;
+    top: 150px;
   }
 
   30% {
-      top: 125px;
+    top: 125px;
   }
 
   50% {
-      top: 80px;
+    top: 80px;
   }
 
   70% {
@@ -98,11 +98,11 @@
   }
 
   80% {
-      top: 125px;
+    top: 125px;
   }
 
   100%{
-      top: 150px;
+    top: 150px;
   }
 }
 
@@ -117,6 +117,18 @@
   height: 50px;
   background-image: url("imgs/spaceInvader.png");
   background-size: 50px 50px;
+}
+
+@keyframes linearInvader {
+  /* Add this animation to the MUI Box such that  */
+  0% {left: 40px;}
+}
+
+#spaceShip {
+  width: 50px;
+  height: 50px;
+  background-image: url("imgs/spaceShip.png");
+  background-size: 50px 50px; 
 }
 
 .home-background{
