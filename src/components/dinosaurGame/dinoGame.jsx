@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import '../../App.css';
 import floor from '../../imgs/ground.png';
 import { Shake } from 'reshake'
+import anime from 'animejs/lib/anime.es.js';
 
 function DinoGame() {
 
