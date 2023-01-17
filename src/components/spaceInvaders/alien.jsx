@@ -11,7 +11,7 @@ function Alien(props) {
 
     return (  
         <div>
-            <div id={rowId} alienHealth={props.alienHealth} row={props.row}/>
+            <div id="spaceInvader/1" alienHealth={props.alienHealth} row={props.row}/>
         </div>
     );
 }

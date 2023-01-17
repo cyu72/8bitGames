@@ -1,19 +1,21 @@
 import React from 'react';
 import { useEffect, useState } from "react";
 import "../../App.css";
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 import Alien from './alien';
 
 function SpaceInvadersGame() {
 
     const enemyMap = [
         {
-            row: 3, arr: [1, 2, 1, 3, 1, 1]
+            row: 3, arr: [1, 2, 1]
         },
         {
-            row: 2, arr: [1, 3, 1, 1, 1, 1]
+            row: 2, arr: [1, 3, 1]
         },
         {
-            row: 1, arr: [1, 1, 2, 1, 3, 3]
+            row: 1, arr: [1, 1, 2]
         }
         // [1, 2, 1, 3, 1, 1],
         // [1, 3, 1, 1, 1, 1],
@@ -38,14 +40,42 @@ function SpaceInvadersGame() {
     }
 
     return (
-        <div className="spaceGame" playable={isAlive}>
+        <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        margin="auto"
+        sx={{ 
+            left: 500,
+            width: 900,
+            height: 600,
+            border: '3px solid black'}}>
+            {/* <div>
+            {enemyMap.map((item => item.arr.map((alienHealth) => (
+                <Alien row={`/${item.row}`} alienHealth={`/${alienHealth}`}/>
+            ))))}
+            </div> */}
+            <Box 
+            sx={{ flexGrow: 1 }}
+            alignItems="center"
+            justifyContent="center">
+                <Grid container spacing={6}>
+                    <Grid item xs={1}>
+                        <Alien id="spaceInvader/1"/>
+                    </Grid>
+                    <Grid item xs={1}>
+                        <Alien id="spaceInvader/1"/>
+                    </Grid>
+                    <Grid item xs={1}>
+                        <Alien id="spaceInvader/1"/>
+                    </Grid>
+                    <Grid item xs={1}>
+                        <Alien id="spaceInvader/1"/>
+                    </Grid>
+                </Grid>
+            </Box>
             <div id="spaceShip"/>
-            <div>
-                {enemyMap.map((item => item.arr.map((alienHealth) => (
-                    <Alien row={`/${item.row}`} alienHealth={`/${alienHealth}`}/>
-                ))))}
-            </div>
-        </div>
+        </Box>
             // {/* <body style={bodyStyle} className="spaceBackground"/>  */}
     );
 }
