@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef, useImperativeHandle }  from 'react';
 import { useEffect, useState, useRef } from "react";
 import "../../App.css";
 import Box from '@mui/material/Box';
@@ -114,7 +114,7 @@ function SpaceInvadersGame() {
                     ))))}
                 </Grid>
             </Box>
-            <SpaceShip ref={spaceShipRef} />
+            <SpaceShip forwardRef={spaceShipRef} />
         </Box>
             // {/* <body style={bodyStyle} className="spaceBackground"/>  */}
     );
