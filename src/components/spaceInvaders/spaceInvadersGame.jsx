@@ -1,12 +1,15 @@
 import React from 'react';
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import "../../App.css";
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Alien from './alien';
+import SpaceShip from './spaceShip';
+import { motion } from "framer-motion"
 
 function SpaceInvadersGame() {
 
+    const spaceShipRef = useRef(null);
     const enemyMap = [
         {
             arr: ['A', 1, 2, 1, 3]
@@ -34,9 +37,26 @@ function SpaceInvadersGame() {
             if (isAlive === "notAlive"){
                 //start the game
                 setIsAlive("Alive");
-
             }
         }
+
+        if (e.keyCode === 39){
+            // right
+            moveShipRight();
+        }
+
+        if (e.keyCode === 37){
+            // left
+            moveShipLeft();
+        }
+    }
+
+    let moveShipRight = () => {
+        spaceShipRef.current.log();
+    }
+
+    let moveShipLeft = () => {
+
     }
 
     let filterRowOne = (object) => {
@@ -59,18 +79,19 @@ function SpaceInvadersGame() {
     return (
         <Box
         display="flex"
-        justifyContent="center"
-        alignItems="center"
         margin="auto"
-        sx={{ 
+        sx={{
+            position: 'relative',
+            top: 80,
+            left: -10,
             width: 900,
             height: 600,
-            border: '3px solid black'}}>
+            border: '3px solid black',
+            margin: 'auto',
+            overflow: 'hidden'}}>
             <Box 
-            sx={{ flexGrow: 1 }}
-            alignItems="center"
-            justifyContent="center"
-            margin="auto">
+            sx={{ flexGrow: 1, 
+            right: 50}}>
                 <Grid container spacing={6}>
                     {enemyMap.filter(filterRowOne).map((item => item.arr.filter(filterLetterOut).map((alienHealth) => (
                         <Grid item xs={1}>
@@ -93,7 +114,7 @@ function SpaceInvadersGame() {
                     ))))}
                 </Grid>
             </Box>
-            <div id="spaceShip"/>
+            <SpaceShip ref={spaceShipRef} />
         </Box>
             // {/* <body style={bodyStyle} className="spaceBackground"/>  */}
     );
