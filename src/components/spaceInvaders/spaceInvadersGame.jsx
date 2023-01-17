@@ -9,13 +9,13 @@ function SpaceInvadersGame() {
 
     const enemyMap = [
         {
-            row: 3, arr: [1, 2, 1]
+            arr: ['A', 1, 2, 1, 3]
         },
         {
-            row: 2, arr: [1, 3, 1]
+            arr: ['B', 1, 3, 1, 1]
         },
         {
-            row: 1, arr: [1, 1, 2]
+            arr: ['C', 1, 1, 2, 1]
         }
         // [1, 2, 1, 3, 1, 1],
         // [1, 3, 1, 1, 1, 1],
@@ -39,6 +39,23 @@ function SpaceInvadersGame() {
         }
     }
 
+    let filterRowOne = (object) => {
+        return (object.arr[0] === 'A' ? object : null);
+        // Function Objective: Render the list if the first element is the corresponding letter
+    }
+
+    let filterRowTwo = (object) => {
+        return (object.arr[0] === 'B' ? object : null);
+    }
+
+    let filterRowThree = (object) => {
+        return (object.arr[0] === 'C' ? object : null);
+    }
+
+    let filterLetterOut = (object) => {
+        return (typeof object === 'string' ? undefined : object);
+    }
+
     return (
         <Box
         display="flex"
@@ -46,32 +63,34 @@ function SpaceInvadersGame() {
         alignItems="center"
         margin="auto"
         sx={{ 
-            left: 500,
             width: 900,
             height: 600,
             border: '3px solid black'}}>
-            {/* <div>
-            {enemyMap.map((item => item.arr.map((alienHealth) => (
-                <Alien row={`/${item.row}`} alienHealth={`/${alienHealth}`}/>
-            ))))}
-            </div> */}
             <Box 
             sx={{ flexGrow: 1 }}
             alignItems="center"
-            justifyContent="center">
+            justifyContent="center"
+            margin="auto">
                 <Grid container spacing={6}>
-                    <Grid item xs={1}>
-                        <Alien id="spaceInvader/1"/>
-                    </Grid>
-                    <Grid item xs={1}>
-                        <Alien id="spaceInvader/1"/>
-                    </Grid>
-                    <Grid item xs={1}>
-                        <Alien id="spaceInvader/1"/>
-                    </Grid>
-                    <Grid item xs={1}>
-                        <Alien id="spaceInvader/1"/>
-                    </Grid>
+                    {enemyMap.filter(filterRowOne).map((item => item.arr.filter(filterLetterOut).map((alienHealth) => (
+                        <Grid item xs={1}>
+                            <Alien alienHealth={`/${alienHealth}`}/>
+                        </Grid>
+                    ))))}
+                </Grid>
+                <Grid container spacing={6}>
+                    {enemyMap.filter(filterRowTwo).map((item => item.arr.filter(filterLetterOut).map((alienHealth) => (
+                        <Grid item xs={1}>
+                            <Alien alienHealth={`/${alienHealth}`}/>
+                        </Grid>
+                    ))))}
+                </Grid>
+                <Grid container spacing={6}>
+                    {enemyMap.filter(filterRowThree).map((item => item.arr.filter(filterLetterOut).map((alienHealth) => (
+                        <Grid item xs={1}>
+                            <Alien alienHealth={`/${alienHealth}`}/>
+                        </Grid>
+                    ))))}
                 </Grid>
             </Box>
             <div id="spaceShip"/>
