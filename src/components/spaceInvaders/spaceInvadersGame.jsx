@@ -1,4 +1,4 @@
-import React, { forwardRef, useImperativeHandle }  from 'react';
+import React from 'react';
 import { useEffect, useState, useRef } from "react";
 import "../../App.css";
 import Box from '@mui/material/Box';
@@ -9,7 +9,7 @@ import { motion } from "framer-motion"
 
 function SpaceInvadersGame() {
 
-    const spaceShipRef = useRef(null);
+    const spaceShipRef = useRef();
     const enemyMap = [
         {
             arr: ['A', 1, 2, 1, 3]
@@ -52,11 +52,11 @@ function SpaceInvadersGame() {
     }
 
     let moveShipRight = () => {
-        spaceShipRef.current.log();
+        spaceShipRef.current.moveRight();
     }
 
     let moveShipLeft = () => {
-
+        spaceShipRef.current.moveLeft();
     }
 
     let filterRowOne = (object) => {
@@ -114,7 +114,7 @@ function SpaceInvadersGame() {
                     ))))}
                 </Grid>
             </Box>
-            <SpaceShip forwardRef={spaceShipRef} />
+            <SpaceShip ref={spaceShipRef} />
         </Box>
             // {/* <body style={bodyStyle} className="spaceBackground"/>  */}
     );
