@@ -9,7 +9,7 @@ import { motion } from "framer-motion"
 
 function SpaceInvadersGame() {
 
-    const spaceShipRef = useRef(null);
+    const spaceShipRef = useRef();
     const enemyMap = [
         {
             arr: ['A', 1, 2, 1, 3]
@@ -52,11 +52,11 @@ function SpaceInvadersGame() {
     }
 
     let moveShipRight = () => {
-        spaceShipRef.current.log();
+        spaceShipRef.current.moveRight();
     }
 
     let moveShipLeft = () => {
-
+        spaceShipRef.current.moveLeft();
     }
 
     let filterRowOne = (object) => {
