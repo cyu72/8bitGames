@@ -124,7 +124,7 @@
   0% {left: 40px;}
 }
 
-#spaceShip {
+.spaceShip {
   width: 50px;
   height: 50px;
   background-image: url("imgs/spaceShip.png");
@@ -165,5 +165,20 @@
 
 #dinoScreenshot {
   position: relative;
-  top: 190px;
+  top: 170px;
+  width: 600px;
+  height: auto;
+}
+
+#bottom-header {
+  background-color: #421576;
+  position: relative;
+  top: 250px;
+}
+
+.example-container div {
+  background: white;
+  border-radius: 30px;
+  width: 150px;
+  height: 150px;
 }

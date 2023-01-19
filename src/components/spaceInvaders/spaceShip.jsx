@@ -16,10 +16,10 @@ const SpaceShip = forwardRef((props, ref) => {
   }, []);
 
     return ( 
-        <div id="spaceShip">
+        <div className="spaceShip">
           <motion.div 
-          animate={{y: 100, scale: 1}} 
-          inital={{scale: 0}}>
+            animate={{y: 100, scale: 1}} 
+            inital={{scale: 0}}>
           </motion.div>
         </div>
     );

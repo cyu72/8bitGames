@@ -115,6 +115,12 @@ function SpaceInvadersGame() {
                 </Grid>
             </Box>
             <SpaceShip ref={spaceShipRef} />
+            {/* <div className='example-container'>
+                <motion.div
+                    animate={{y: 100, scale: 3}} 
+                    inital={{scale: 0}}>
+                </motion.div>
+            </div> */}
         </Box>
             // {/* <body style={bodyStyle} className="spaceBackground"/>  */}
     );
