@@ -26,6 +26,8 @@ function SpaceInvadersGame() {
     ];
 
     let [isAlive, setIsAlive] = useState("notAlive");
+    let isAliveRef = useRef(null);
+    isAliveRef.current = isAlive;
 
     useEffect(() => {
         document.body.style = 'background-image: linear-gradient(#FEB628, #FE2765, #9C0A70, #421576); background-repeat: no-repeat; background-size: 100vw 100vh; overflow: hidden';
@@ -37,6 +39,7 @@ function SpaceInvadersGame() {
             if (isAlive === "notAlive"){
                 //start the game
                 setIsAlive("Alive");
+                isGame();
             }
         }
 
@@ -50,6 +53,13 @@ function SpaceInvadersGame() {
             moveShipLeft();
         }
     }
+
+    let isGame = () => {
+        while (isAliveRef.current === 'Alive'){
+            spaceShipRef.current.checkPos();
+        }
+    }
+
 
     let moveShipRight = () => {
         spaceShipRef.current.moveRight();
@@ -114,13 +124,7 @@ function SpaceInvadersGame() {
                     ))))}
                 </Grid>
             </Box>
-            <SpaceShip ref={spaceShipRef} />
-            {/* <div className='example-container'>
-                <motion.div
-                    animate={{y: 100, scale: 3}} 
-                    inital={{scale: 0}}>
-                </motion.div>
-            </div> */}
+            <SpaceShip ref={spaceShipRef} life={isAliveRef}/>
         </Box>
             // {/* <body style={bodyStyle} className="spaceBackground"/>  */}
     );
