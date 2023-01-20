@@ -132,6 +132,7 @@
 }
 
 .home-background{
+  font-family: 'VT323', monospace;
   text-align: center;
 }
 
@@ -165,15 +166,28 @@
 
 #dinoScreenshot {
   position: relative;
-  top: 170px;
+  top: 450px;
   width: 600px;
   height: auto;
+}
+
+#dinoIcon {
+  position: relative;
+  top: 430px;
+  width: 150px;
+  height: auto;
+}
+
+#home-dino-text {
+  position: absolute;
+  font-size: x-large;
+  top: 1150px;
 }
 
 #bottom-header {
   background-color: #421576;
   position: relative;
-  top: 250px;
+  top: 3000px;
 }
 
 .example-container div {
