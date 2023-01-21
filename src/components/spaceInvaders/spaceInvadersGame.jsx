@@ -45,6 +45,7 @@ function SpaceInvadersGame() {
 
         if (e.keyCode === 39){
             // right
+            setIsAlive("notAlive");
             moveShipRight();
         }
 
