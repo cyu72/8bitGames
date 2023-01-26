@@ -10,6 +10,7 @@ import { motion } from "framer-motion"
 function SpaceInvadersGame() {
 
     const spaceShipRef = useRef();
+    const alienRef = useRef();
     const enemyMap = [
         {
             arr: ['A', 1, 2, 1, 3]
@@ -45,7 +46,6 @@ function SpaceInvadersGame() {
 
         if (e.keyCode === 39){
             // right
-            setIsAlive("notAlive");
             moveShipRight();
         }
 
@@ -91,6 +91,7 @@ function SpaceInvadersGame() {
         <Box
         display="flex"
         margin="auto"
+        justifyContent="center"
         sx={{
             position: 'relative',
             top: 80,
@@ -106,26 +107,33 @@ function SpaceInvadersGame() {
                 <Grid container spacing={6}>
                     {enemyMap.filter(filterRowOne).map((item => item.arr.filter(filterLetterOut).map((alienHealth) => (
                         <Grid item xs={1}>
-                            <Alien alienHealth={`/${alienHealth}`}/>
+                            <Alien ref={alienRef} alienHealth={`/${alienHealth}`}/>
                         </Grid>
                     ))))}
                 </Grid>
                 <Grid container spacing={6}>
                     {enemyMap.filter(filterRowTwo).map((item => item.arr.filter(filterLetterOut).map((alienHealth) => (
                         <Grid item xs={1}>
-                            <Alien alienHealth={`/${alienHealth}`}/>
+                            <Alien ref={alienRef} alienHealth={`/${alienHealth}`}/>
                         </Grid>
                     ))))}
                 </Grid>
                 <Grid container spacing={6}>
                     {enemyMap.filter(filterRowThree).map((item => item.arr.filter(filterLetterOut).map((alienHealth) => (
                         <Grid item xs={1}>
-                            <Alien alienHealth={`/${alienHealth}`}/>
+                            <Alien ref={alienRef} alienHealth={`/${alienHealth}`}/>
                         </Grid>
                     ))))}
                 </Grid>
             </Box>
-            <SpaceShip ref={spaceShipRef} life={isAliveRef}/>
+            <Box
+            sx={{
+                left:-770,
+                top: 540,
+                position:'relative',
+            }}>
+                <SpaceShip ref={spaceShipRef} life={isAliveRef}/>
+            </Box>
         </Box>
             // {/* <body style={bodyStyle} className="spaceBackground"/>  */}
     );

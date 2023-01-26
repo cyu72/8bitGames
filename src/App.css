@@ -129,6 +129,7 @@
   height: 50px;
   background-image: url("imgs/spaceShip.png");
   background-size: 50px 50px; 
+  transform: rotate(90deg);
 }
 
 .home-background{
